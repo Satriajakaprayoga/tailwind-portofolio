@@ -1,0 +1,233 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.active {
+    color: #0ef;
+}
+
+.navbar-fixed {
+    /* @apply fixed z-[9999] bg-scBgColor bg-opacity-80; */
+    @apply bg-scBgColor bg-opacity-80;
+    backdrop-filter: blur(5px);
+    /* box-shadow: inset 0 -1px 0 0 rgba(0, 238, 255, 0.2); */
+}
+
+.navbar-none {
+    display: none;
+}
+
+.icon-sosmed {
+    border: .2rem solid #0ef;
+    font-size: 2rem;
+    color: #0ef;
+    margin: 0 0.8rem ;
+}
+
+.icon-sosmed:hover {
+    background-color: #0ef;
+    color: #323946;
+    box-shadow: 0 0 1rem #0ef;
+}
+
+.foto {
+    width: 14rem;
+    border: .2rem solid #0ef;
+    border-radius: 50%;
+}
+
+.circle-spin{
+    position: absolute;
+    top: 50%;
+    left: 7rem;
+    transform: translate(-50%, -50%) rotate(0);
+    width: 16rem;
+    height: 16rem;
+    border-radius: 50%;
+    border-top: .2rem solid #323946;
+    border-bottom: .2rem solid #323946;
+    border-left: .2rem solid #0ef;
+    border-right: .2rem solid #0ef;
+    animation: spinnImage 8s linear infinite;
+}
+
+@keyframes spinnImage {
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.efek-teks {
+    font-size: 2rem;
+    font-weight: 700;
+    color: transparent;
+    -webkit-text-stroke: .7px #0ef;
+    background-image: linear-gradient(#0ef, #0ef);
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: textAnimated 6s linear infinite;
+    animation-delay: 1s;
+}
+
+
+@keyframes textAnimated {
+    0%, 10%, 100% {
+        background-position: -43rem 0;
+    }
+    65%, 85% {
+        background-position: 0 0;
+    }
+}
+
+/* class btn untuk button */
+.btn {
+    position: relative;
+    display: inline-flex;
+    text-align: center;
+    background: transparent;
+    border: .2rem solid #0ef;
+    border-radius: .8rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    color: #0ef;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.btn:hover::before {
+    height: 100%;
+}
+
+.btn::before {
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 100%;
+    background: #0ef;
+    z-index: -1;
+    transition: .5s;
+}
+
+.btn:hover {
+    box-shadow: 2px 4px 8px rgba(0, 238, 255, 0.8) ;
+    color: #323946;
+}
+/* class btn untuk button */
+.servis {
+    border: .2rem solid #323946;
+    transition: .5 ease;
+}
+
+.servis:hover {
+    border-color: #0ef;
+    transform: scale(1.02);
+}
+
+.bgGradiasi2 .bgGradiasi1 {
+    position: relative;
+    border-radius: .5rem;
+    box-shadow: 0 0 .2rem #0ef;
+    overflow: hidden;
+    display: flex;
+}
+
+.bgGradiasi1 .bgGradiasi {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,.1), #0ef);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 2rem;
+    /* transform: translateY(100%);
+    transition: .5s ease; */
+}
+
+.bgGradiasi1:hover .bgGradiasi{
+    transform: translateY(0);
+}
+
+.bgGradiasi1:hover img{
+    transform: scale(1.1);
+}
+
+@layer base {
+    html {
+        font-family: 'Poppins', sans-serif;
+        color: white;
+    }
+}
+
+/* BREAKPOINTS */
+/* @media (max-width:1200px) {
+    html {
+        font-size: 90%;
+    }
+}
+
+@media (max-width:991px) {
+    html {
+        font-size: 75%;
+    }
+    header {
+        padding: 2rem 3%;
+    }
+
+    section {
+        padding: 10rem 3% 2rem;
+    }
+
+    footer {
+        padding: 2rem 3%;
+    }
+
+    .home-content {
+        margin-top: 4rem;
+    }
+} */
+
+/* @media (max-width:767px) {
+    .navbar {
+        position: absolute;
+        border-radius: 2%;
+        top: 110%;
+        right: 0px;
+        width: 50%;
+        padding: 1rem 3%;
+        backdrop-filter: blur(5px);
+        @apply bg-scBgColor bg-opacity-80;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .home {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home-content {
+        width: 100%;
+    }
+} */
+
+@media (min-width:768px) {
+
+    .bgGradiasi1 .bgGradiasi {    
+        transform: translateY(100%);
+        transition: .5s ease;
+    }
+}
