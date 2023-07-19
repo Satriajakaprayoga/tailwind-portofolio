@@ -33,7 +33,7 @@ let isMenuOpen = false;
 menuIcon.onclick = () => {
   if (isMenuOpen) {
     navbar.classList.add('hidden');
-    menuIcon.src = 'dist/img/bx-menu.svg';
+    menuIcon.src = "dist/img/bx-menu.svg";
   } else {
     menuIcon.src = 'dist/img/bx-x.svg';
     navbar.classList.remove('hidden');
